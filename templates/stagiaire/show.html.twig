@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stagiaire{% endblock %}
+
+{% block body %}
+    <h1>Stagiaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stagiaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ stagiaire.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ stagiaire.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ stagiaire.age }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ stagiaire.section }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ stagiaire.adress }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ stagiaire.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_stagiaire_index') }}">back to list</a></br>
+
+    {# <a href="{{ path('app_generate_pdf', {'id': stagiaire.id}) }}">telecharger en format pdf</a> #}
+    <a href="{{ path('pdf_route' ,{'id': stagiaire.id}) }}">telecharger en format pdf</a>
+
+    
+{% endblock %}

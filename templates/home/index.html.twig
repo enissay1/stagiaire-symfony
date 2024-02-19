@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{{ path('app_home') }}">Accueil</a></li>
+         <li><a href="{{ path('app_stagiaire_index') }}">Liste des stagaires(ROLE_ADMIN)</a></li>
+
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {# Si l'utilisateur est connecté, afficher un lien de déconnexion #}
+            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+        {% else %}
+            {# Si l'utilisateur n'est pas connecté, afficher des liens pour se connecter et s'inscrire #}
+            <li><a href="{{ path('app_login') }}">Connexion</a></li>
+            <li><a href="{{ path('app_register') }}">Inscription</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+{# Contenu de la page #}
+{% block content %}{% endblock %}
+
+</body>
+</html>

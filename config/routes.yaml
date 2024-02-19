@@ -42,14 +42,6 @@ app_home:
   path: "/"
   controller: 'App\Controller\HomeController::index'
 
-app_generate_pdf:
-  path: "/stagiaire/generatepdf/{id}"
-  controller: 'App\Controller\PdfStagiaireController::HtmlToPdf'
-  methods: ["GET"]
-app_upload_pdf:
-  path: "/stagiaire/pdf/{id}"
-  controller: 'App\Controller\PdfStagiaireController::uploadPdf'
-  methods: ["GET"]
 pdf_route:
   path: "/stagiaire/generate-pdf/{id}"
   controller: 'App\Controller\PdfController::generatePdf'
