@@ -1,7 +1,55 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
+app_stagiaire_index:
+  path: "/stagiaire"
+  controller: 'App\Controller\StagiaireController::index'
+  methods: ["GET"]
 
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+app_stagiaire_new:
+  path: "/stagiaire/new"
+  controller: 'App\Controller\StagiaireController::new'
+  methods: ["GET", "POST"]
+
+app_stagiaire_add:
+  path: "/stagiaire/add"
+  controller: 'App\Controller\StagiaireController::add'
+  methods: ["GET", "POST"]
+
+app_stagiaire_show:
+  path: "/stagiaire/{id}"
+  controller: 'App\Controller\StagiaireController::show'
+  methods: ["GET"]
+
+app_stagiaire_edit:
+  path: "/stagiaire/{id}/edit"
+  controller: 'App\Controller\StagiaireController::edit'
+  methods: ["GET", "POST"]
+
+app_stagiaire_delete:
+  path: "/stagiaire/{id}"
+  controller: 'App\Controller\StagiaireController::delete'
+  methods: ["POST"]
+
+app_login:
+  path: "/login"
+  controller: 'App\Controller\SecurityController::login'
+app_logout:
+  path: "/logout"
+  controller: 'App\Controller\SecurityController::logout'
+app_register:
+  path: "/register"
+  controller: 'App\Controller\RegistrationController::register'
+
+app_home:
+  path: "/"
+  controller: 'App\Controller\HomeController::index'
+
+app_generate_pdf:
+  path: "/stagiaire/generatepdf/{id}"
+  controller: 'App\Controller\PdfStagiaireController::HtmlToPdf'
+  methods: ["GET"]
+app_upload_pdf:
+  path: "/stagiaire/pdf/{id}"
+  controller: 'App\Controller\PdfStagiaireController::uploadPdf'
+  methods: ["GET"]
+pdf_route:
+  path: "/stagiaire/generate-pdf/{id}"
+  controller: 'App\Controller\PdfController::generatePdf'
